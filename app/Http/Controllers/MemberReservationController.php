@@ -9,6 +9,7 @@ class MemberReservationController extends Controller
     //
     public function index() {
 
-        
+        echo "this is a test reseration system"
+
     }
 }
