@@ -9,7 +9,15 @@ class MemberReservationController extends Controller
     //
     public function index() {
 
-        echo "this is a test reseration system"
+        echo "this is a test reseration system";
 
+    }
+
+
+    public function edit(Request $request, int $id) {
+
+
+        echo $id;
+        
     }
 }
