@@ -1,0 +1,16 @@
+name: Auto Pull Request
+
+on:
+  push:
+    branches:
+      - feature-*
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: master
+          pr_title: "Auto PR from ${{ github.ref_name }}"
+
