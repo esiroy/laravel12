@@ -21,7 +21,7 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-    # Disable Vite so manifest.json is not required
+    # Disable Vite so tests don't need manifest.json
     - name: Create .env.testing
       run: |
         echo "APP_ENV=testing" >> .env.testing
@@ -32,9 +32,6 @@ jobs:
 
     - name: Generate key
       run: php artisan key:generate
-
-    - name: Generate testing key
-      run: php artisan key:generate --env=testing
 
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
@@ -48,4 +45,5 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
+        APP_KEY: base64:3WkzeWJ+hUoR4t7/Jno11vBJJLzdi/i5foJrE6Jy3Y0=
       run: php artisan test
