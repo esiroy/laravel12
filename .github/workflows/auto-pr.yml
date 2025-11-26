@@ -3,7 +3,7 @@ name: Auto Pull Request
 on:
   push:
     branches:
-      - feature-*
+      - feature/*
 
 jobs:
   create_pr:
