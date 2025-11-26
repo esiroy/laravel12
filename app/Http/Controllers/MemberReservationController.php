@@ -14,6 +14,8 @@ class MemberReservationController extends Controller
 
         echo "Test";
 
+        echo "test 3";
+
     }
 
 
