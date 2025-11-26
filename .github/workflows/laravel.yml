@@ -26,6 +26,8 @@ jobs:
       run: |
         echo "APP_ENV=testing" >> .env.testing
         echo "VITE_ENABLED=false" >> .env.testing
+        echo "VOLT_USE_VITE=false" >> .env.testing
+        echo "VITE_URL=" >> .env.testing
 
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
